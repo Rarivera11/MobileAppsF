@@ -1,0 +1,44 @@
+{
+  "name": "tareadosmovil",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "build": "expo build:android"
+  },
+  "resolutions": {
+    "//": "See https://github.com/facebook/create-react-app/issues/11773",
+    "react-error-overlay": "6.0.9"
+  },
+  "dependencies": {
+    "@react-native-firebase/app": "^14.5.1",
+    "@react-navigation/drawer": "^6.3.0",
+    "@react-navigation/native": "^6.0.8",
+    "expo": "^44.0.0",
+    "expo-status-bar": "~1.2.0",
+    "firebase": "^9.4.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-native": "^0.64.3",
+    "react-native-gesture-handler": "~2.1.0",
+    "react-native-modal-dropdown": "^1.0.2",
+    "react-native-paper": "^4.11.2",
+    "react-native-reanimated": "^1.13.2",
+    "react-native-safe-area-context": "3.3.2",
+    "react-native-screens": "~3.10.1",
+    "react-native-web": "0.17.1",
+    "react-navigation": "^4.4.4",
+    "react-player": "^2.9.0",
+    "upgrade": "^1.1.0",
+    "yarn": "^1.22.17",
+    "yet": "^0.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9"
+  },
+  "private": true
+}
