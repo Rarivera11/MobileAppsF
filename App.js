@@ -1,104 +1,65 @@
-import 'react-native-gesture-handler'
-
-import React from 'react'
-import MyDrawer from './MyDrawer'
-//import Prueba from './assets/pages/prueba'
-import { Component } from 'react/cjs/react.production.min'
-import { Button, View, Text, Image, StyleSheet } from 'react-native';
+import React, {useState} from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
-import { TextInput } from 'react-native-gesture-handler';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+
+
+/*******************VIEWS****************** */
+
+import Login from './Views/Login';
+import Resumen from './Views/Resumen'
+import Noticias from './Views/Noticias';
+import RecuperarContrasena from './Views/RecuperarContrasena';
+import ConsultaCuentasAhorro from './Views/ConsultaCuentasAhorro';
+import Descuentos from './Views/Descuentos';
+import Inversiones from './Views/Inversiones';
+import ConsultaPrestamos from './Views/ConsultaPrestamos';
+import Video from './Views/Video';
+import Sugerencias from './Views/Sugerencias';
+import Preguntas from './Views/Preguntas';
+import ContactoMapas from './Views/ContactoMapas';
+import Ayuda from './Views/Ayuda';
+
+/*********************************************** */
 
 const Drawer = createDrawerNavigator();
 
-class App extends Component{
+
+const MyTheme = {
+  ...DefaultTheme, 
+  colors:{
+    ...DefaultTheme.colors,
+    background:'white'
+  }
+}
+
+export default function MyDrawer() {
+  const [token, setToken] = useState(localStorage.getItem('token'))
 
 
-
-  
- HomeScreen=({ navigation })=> {
-  
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {/* aqui lo que va en el medio de la pantalla */}
-      <Image 
-           
-          
-      />
-
-      <br/>
-      <Text>Nombres:</Text>
-      <Text>Luis Alejnadro Paulino Duverge</Text><br/>
-      <Text>Matricula:</Text>
-      <Text>2019-7391</Text><br/>
-      <Text>Correo:</Text>
-      <Text >Duvergejose022@gmail.com</Text>
-    </View>
+    token !== null ?
+    <NavigationContainer theme={MyTheme}>
+      <Drawer.Navigator initialRouteName="Login">
+        <Drawer.Screen name='Login' component={Login} />
+        <Drawer.Screen name="Resumen" component={Resumen} />
+        <Drawer.Screen name="Noticias" component={Noticias} />
+        <Drawer.Screen name="Recuperar Contraseña" component={RecuperarContrasena} />
+        <Drawer.Screen name="Consultar Cuentas de Ahorros" component={ConsultaCuentasAhorro} />
+        <Drawer.Screen name="Descuentos" component={Descuentos} />
+        <Drawer.Screen name="Inversiones" component={Inversiones} />
+        <Drawer.Screen name="Consulta de Prestamos" component={ConsultaPrestamos} />
+        <Drawer.Screen name="Videos Informativos" component={Video} />
+        <Drawer.Screen name="Sugerencias" component={Sugerencias} />
+        <Drawer.Screen name="Preguntas Frecuentes" component={Preguntas} />
+        <Drawer.Screen name="Contactanos" component={ContactoMapas} />
+        <Drawer.Screen name="Ayuda" component={Ayuda} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  :
+  <NavigationContainer theme={MyTheme}>
+  <Drawer.Navigator initialRouteName="Login">
+    <Drawer.Screen name='Login' component={Login} />
+  </Drawer.Navigator>
+</NavigationContainer>
   );
 }
-
- NotificationsScreen=({ navigation })=> {
-  
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {/* <Button onPress={() => navigation.goBack()} title="Go back home" /> */}
-      <Text>Sumadora de Numeros</Text>
-       
-    </View>
-  );
-}
-
- TraductorScreen=({ navigation }) =>{
-  
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {/* <Button onPress={() => navigation.goBack()} title="Go back home" /> */}
-      <Text>Traductor de numeros</Text>
-       
-    </View>
-  );
-}
-
-
- TablaMultiplicarScreen=({ navigation }) =>{
-
- 
-  
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {/* <Button onPress={() => navigation.goBack()} title="Go back home" /> */}
-      <Text>Tabla Multiplicar</Text>
-       
-    </View>
-  );
-}
-
-
- VideoScreen({ navigation }) {
-  
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {/* <Button onPress={() => navigation.goBack()} title="Go back home" /> */}
-      <Text>Video Explicativo</Text>
-       
-    </View>
-  );
-}
-
-
-
-
-
-
-
-
-
-
-  render(){
-  return(
-    <MyDrawer/>
-  )}
-}
-
-
-export default App;
