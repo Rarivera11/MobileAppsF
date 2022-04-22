@@ -36,12 +36,14 @@ export default function MyDrawer() {
   const [token, setToken] = useState(localStorage.getItem('token'))
 
 
+/*   <Drawer.Screen name="Resumen" component={Resumen} />
+ */
   return (
     token !== null ?
     <NavigationContainer theme={MyTheme}>
       <Drawer.Navigator initialRouteName="Login">
         <Drawer.Screen name='Login' component={Login} />
-        <Drawer.Screen name="Resumen" component={Resumen} />
+        
         <Drawer.Screen name="Noticias" component={Noticias} />
         <Drawer.Screen name="Recuperar Contraseña" component={RecuperarContrasena} />
         <Drawer.Screen name="Consultar Cuentas de Ahorros" component={ConsultaCuentasAhorro} />
