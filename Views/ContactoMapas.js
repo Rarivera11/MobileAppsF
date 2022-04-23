@@ -109,7 +109,28 @@ function ContactoMapas({ navigation }) {//Luis Alejandro Paulino 2019-7391
 
 
 
-      />
+      /><br></br><br></br>
+
+      <Image style={{ height: 100, width: 100 }}
+        source={loginLogo}
+      /> <br></br><br></br>
+
+      <Text style={{color:'grey', fontSize:20}}>Conctatos</Text>
+
+      <br></br><br></br>
+
+      <Text style={{color:'grey'}}>Whatsapp</Text>
+      <Text style={{color:'grey'}}>(849) 451-0798</Text><br></br>
+
+      <Text style={{color:'grey'}}>Oficina</Text>
+      <Text style={{color:'grey'}}>(809) 287-2700</Text>
+      <Text style={{color:'grey'}}>info@coopdgii.com</Text><br></br><br></br>
+
+
+      <Text style={{color:'grey'}}>Locacion</Text>
+      <Text style={{color:'grey'}}>Av.Pedro Henriquez Ureña #29 Gazcue</Text>
+      <Text style={{color:'grey'}}>Santo Domingo</Text>
+      <Text style={{color:'grey'}}>Republica Domincana</Text>
 
 
 
