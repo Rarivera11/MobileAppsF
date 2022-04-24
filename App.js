@@ -36,6 +36,8 @@ export default function MyDrawer() {
   const [token, setToken] = useState(localStorage.getItem('token'))
 
 
+/*   <Drawer.Screen name="Resumen" component={Resumen} />
+ */
   return (
     token !== null ?
     <NavigationContainer theme={MyTheme}>

@@ -1,4 +1,4 @@
-
+import source1 from '../assets/image/cop.png';
 import React,{useState} from 'react';
 import { Button, View, Text, Image, StyleSheet, TouchableHighlight, ImageBackground, FlatList, Alert, Modal } from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
@@ -7,8 +7,8 @@ import styles from '../assets/css/Style' ;
 
 function Descuentos({ navigation }) {//Luis Alejandro Paulino 2019-7391
     return (
-      <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center', ...styles.container }}>
-  
+      <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center', ...styles.container }}><br></br><br></br><hr></hr>
+            Estos Descuentos Son los que tenemos disponibles <br></br><br></br>
         <br />
         <View style={{ color: 'black', borderWidth: 1, width: 203 }}>
           <Image style={{ borderWidth: 1, width: 200, height: 100 }}

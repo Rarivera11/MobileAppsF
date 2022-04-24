@@ -21,43 +21,32 @@ function Preguntas({ navigation }) {//Luis Alejandro Paulino 2019-7391
   
     return (
   
-      <View >
-        <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center', ...styles.container }}>
-          <br></br>
-  
-          <Text>Preguntas Frecuentes</Text><br></br>
-  
-          <br></br>
-  
-          <TextInput
-            style={{ height: 100, width: 200, borderColor: 'black', borderWidth: 1 }}
-  
-            placeholderTextColor="#CBC5C5"
-            value={acciones.fecha}
-            onChangeText={(value) => { setAcciones(value) }}
-            autoCorrect={false}
-            autoCapitalize='none'
-          />
-  
-  
-          <br></br>
-  
-  
-  
-          <TouchableHighlight
-  
-            style={[styles.boton]}
-          >
-            <Text style={[styles.Textboton]}><Text style={{ color: 'white' }}>Enviar</Text></Text>
-          </TouchableHighlight>
-  
-  
-  
-  
-        </View>
-  
-  
-      </View>
+      <View style={{ flex: 1, backgroundColor: '#DBDBDB', alignItems: 'center', ...styles.container }}>
+      <br></br>
+
+      <Text style={{ backgroundColor: 'green', fontSize: 25 }}>Respuestas de Ayuda </Text><br></br>
+
+      <br></br>
+
+      <Text style={{ Color: 'black', fontSize: 25 }}>Cantidad de sucursales:  </Text><br></br>
+
+      <Text style={{ Color: 'black', fontSize: 25 }}>Ubicacion de sucursales: </Text><br></br>
+
+      <Text style={{ Color: 'black', fontSize: 25 }}>Como contactarnos: </Text><br></br>
+
+      <Text style={{ Color: 'black', fontSize: 25 }}>Nuestros productos: </Text><br></br>
+
+
+
+      <br></br>
+
+
+
+
+
+    </View>
+
+
     );
   
   }
