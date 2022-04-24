@@ -39,8 +39,7 @@ export default function MyDrawer() {
   return (
     token !== null ?
     <NavigationContainer theme={MyTheme}>
-      <Drawer.Navigator initialRouteName="Login">
-        <Drawer.Screen name='Login' component={Login} />
+      <Drawer.Navigator initialRouteName="Resumen">
         <Drawer.Screen name="Resumen" component={Resumen} />
         <Drawer.Screen name="Noticias" component={Noticias} />
         <Drawer.Screen name="Recuperar Contraseña" component={RecuperarContrasena} />
