@@ -39,6 +39,7 @@ function Login({ navigation }) {
           clave: "",
         })
         navigation.navigate('Resumen')
+        alert("WELCOME")
       } else {
         alert("USUARIO Y/O CLAVE INCORRETO")
       }

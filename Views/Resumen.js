@@ -53,7 +53,7 @@ function Resumen({ navigation }) {//Luis Alejandro Paulino 2019-7391
   
   
       </View>
-    ) : (<><p>No se encontro data</p> </>);
+    ) : (<><p>Data CArgando</p> </>);
   
   }
 
