@@ -5,7 +5,7 @@ import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 
 import styles from '../assets/css/Style';
 
-function RecuperarContrasena({ navigation }) {//Luis Alejandro Paulino 2019-7391
+function RecuperarContrasena({ navigation }) {
 
   const data = [];
   const [acciones, setAcciones] = React.useState(
@@ -25,9 +25,9 @@ function RecuperarContrasena({ navigation }) {//Luis Alejandro Paulino 2019-7391
 
     <View >
       
-      <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center', ...styles.container }}><br></br><br></br>
-        Ingrese los Siguientes campos
-        <br></br><br></br>
+      <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center', ...styles.container }}>
+        <Text>Ingrese los Siguientes campos</Text>
+        
 
         <TextInput
           style={{ borderBottomEndRadius: 10, backgroundColor: '#F0EEEE', borderWidth: 20, borderRadius: 10, borderWidth: 1, ...styles.input }}
@@ -37,7 +37,7 @@ function RecuperarContrasena({ navigation }) {//Luis Alejandro Paulino 2019-7391
           onChangeText={(value) => { setAcciones(value) }}
           autoCorrect={false}
           autoCapitalize='none'
-        /><br></br>
+        />
 
         <TextInput
           style={{ borderBottomEndRadius: 10, backgroundColor: '#F0EEEE', borderWidth: 20, borderRadius: 10, borderWidth: 1, ...styles.input }}
@@ -48,7 +48,7 @@ function RecuperarContrasena({ navigation }) {//Luis Alejandro Paulino 2019-7391
           autoCorrect={false}
           autoCapitalize='none'
         />
-        <br></br>
+        
 
 
 
@@ -65,11 +65,6 @@ function RecuperarContrasena({ navigation }) {//Luis Alejandro Paulino 2019-7391
 
       </View>
 
-      {/* <View>
-        {acciones.map((e) =>{
-          <Text>{acciones.titulo}</Text>
-        })}
-        </View> */}
 
 
     </View>

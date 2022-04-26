@@ -1,86 +1,98 @@
 import loginLogo from '../assets/image/cop.png';
 import React, { useState } from 'react';
-import { Button, View, Image, Text, TouchableNativeFeedback } from 'react-native';
+import { Button, View, Image, Text, TouchableHighlight } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Styles from '../assets/css/Style';
 
-import styles from '../assets/css/Style';
+
 
 import endPoints from "../Components/Constants/endPoints";
 import { postData } from "../Actions";
 
-var URL = endPoints; //URL for the API
-var formData = new FormData();
+var URL = endPoints;
 
 function Login({ navigation }) {
-  const [token, setToken] = useState(localStorage.getItem('token'));
 
-  const [dataLogin, setDataLogin] = useState({
-    usuario: "",
-    clave: "",
-  });
+  const [usuario, setUsuario] = useState("");
+  const [clave, setClave] = useState("");
 
-  const signIn = () => {
-    if (dataLogin.usuario !== "" && dataLogin.clave !== "") {
-      formData.append('usuario', dataLogin.usuario)
-      formData.append('clave', dataLogin.clave)
-      getToken()
+  const storeData = async (value) => {
+    try {
+      await AsyncStorage.setItem('token', value)
+    } catch (e) {
+    }
+  }
+
+
+  const getToken = () => {
+  
+    
+    var formData = new FormData();
+    if (usuario !== "" && clave !== "") {
+      formData.append('usuario', usuario)
+      formData.append('clave', clave)
+      postData(URL.endPoints.login, formData).then((result) => {
+        if(result.data.data.token){
+        
+        storeData(result.data.data.token)
+          
+       setUsuario("")
+       setClave("")
+      
+        navigation.navigate('Resumen',{
+          userData:result.data.data
+
+        }
+        )
+
+      }else{
+        alert("USUARIO Y/O CLAVE INCORRECTO")
+      }
+      }).catch(()=>{
+        alert("VERIFIQUE SU")
+      })
     } else {
+
       alert("AMBOS CAMPOS SON OBLIGATORIOS")
     }
 
   }
 
-  const getToken = () => {
-    postData(URL.endPoints.login, formData).then((result) => {
-      if (result.data.data.token) {
-        localStorage.setItem('token', result.data.data.token)
-        setDataLogin({
-          usuario: "",
-          clave: "",
-        })
-        navigation.navigate('Resumen')
-        alert("WELCOME")
-      } else {
-        alert("USUARIO Y/O CLAVE INCORRETO")
-      }
-    })
-  }
 
   return (
 
-    <View style={styles.inputContainer}>
-      <br />
+    <View style={Styles.inputContainer}>
+      
 
-      <Image style={styles.stretch}
+      <Image style={Styles.stretch}
         source={loginLogo}
       />
-      <Text style={styles.loginLabel}>Usuario</Text>
       <TextInput
-        style={{ borderBottomEndRadius: 10, backgroundColor: '#F0EEEE', borderWidth: 1, borderRadius: 10, ...styles.input }}
+        style={Styles.input}
         placeholder='Usuario'
         placeholderTextColor="#CBC5C5"
-        value={dataLogin.usuario}
-        onChange={(e) => setDataLogin({ ...dataLogin, usuario: e.target.value })}
-        autoCorrect={false}
-        autoCapitalize='none'
-      /><br></br>
-      <Text style={styles.loginLabel}>Clave</Text>
-      <TextInput
-        style={{ borderBottomEndRadius: 10, backgroundColor: '#F0EEEE', borderWidth: 20, borderRadius: 10, borderWidth: 1, ...styles.input }}
-        placeholder='Clave'
-        secureTextEntry={true}
-
-        placeholderTextColor="#CBC5C5"
-        value={dataLogin.clave}
-        onChange={(e) => setDataLogin({ ...dataLogin, clave: e.target.value })}
+        onChangeText={(e) => setUsuario(e)}
+        value={usuario}
         autoCorrect={false}
         autoCapitalize='none'
       />
-      <br></br>
+      <TextInput
+        style={Styles.input }
+        placeholder='Clave'
+        secureTextEntry={true}
+        placeholderTextColor="#CBC5C5"
+        onChangeText={(e) => setClave(e)}
+        value={clave}
+        autoCorrect={false}
+        autoCapitalize='none'
+      />
+      
 
-
-      <Button color="green" style={styles.btnLogin} title="Iniciar Sesion" onPress={signIn}></Button>
-
+    <TouchableHighlight style={Styles.btnLogin}>
+      <Button color="green" title="Iniciar Sesion" onPress={getToken}></Button>
+      </TouchableHighlight>
+      <Text style={Styles.recoverLabel}>¿Tienes problemas para Iniciar Sesion?</Text>
     </View>
   );
 }

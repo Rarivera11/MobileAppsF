@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native-web";
+import { StyleSheet } from "react-native";
 
 const Styles = StyleSheet.create({
     container: {
@@ -7,8 +7,10 @@ const Styles = StyleSheet.create({
     },
     stretch: {
       bottom: 20,
-      width: 200,
-      height: 200,
+      width: 120,
+      height: 110,
+      marginBottom:10,
+      marginTop:40,
       resizeMode: 'stretch',
       backgroundColor: 'white',
     },
@@ -40,9 +42,12 @@ const Styles = StyleSheet.create({
       height: 40,
       width: 300,
       paddingHorizontal: 5,
-      backgroundColor: '#f4f4f4',
-      marginBottom: 10,
-      borderRadius:"5px"
+      backgroundColor: '#0000',
+      marginBottom: 20,
+      borderRadius:"5px",
+      borderBottomEndRadius: 10,
+      borderWidth: 1, 
+      borderRadius: 10,
     },
     inputContainer: {
       flex: 1, 
@@ -59,12 +64,67 @@ const Styles = StyleSheet.create({
       elevation: 6,
     },
     btnLogin:{
-      width:200
-    },
-    loginLabel:{
+      width:300,
+      borderColor:"green",
+      borderRadius:20,
+      borderWidth: 5,
+      marginTop:20,
 
+    },
+    recoverLabel:{
+      color:"#00BFFF",
+      marginTop:30,
+    },
+    resumenTipo:{
+      alignItems:"flex-start"
+      
+    },
+    resumenBalance:{
+      alignItems:"flex-end"
+    },
+    labelTitle:{
+      fontSize:11,
+      fontWeight:"bold",
+      color:"green",
+      
+    },
+    labelDesc:{
+      fontSize:11,
+      color:"black",
+      
+      
+    },
+    lblcuenta:{
+      marginBottom:10,
+      marginTop:10,
+      marginLeft:30,
+      color:"green"
+    },
+    balance:{
+      fontWeight:"bold",
+    },
+    userName:{
+      padding:25,
+
+    },
+    lbluserName:{
+      textAlign: 'center',
+      borderColor:"green",
+      color:"#228B22",
+      fontSize:15,
+      fontWeight:"bold",
+    },
+    lblWelcome:{
+      textAlign: 'center',
+      borderColor:"gray",
+      color:"#6495ED",
+      fontSize:15,
+      fontWeight:"bold",
+    },
+    division:{
+      borderBottomColor: 'black',
+    borderBottomWidth: 1,
     }
-    
   });
 
   

@@ -9,39 +9,39 @@ import styles from '../assets/css/Style' ;
 function Inversiones({ navigation }) {//Luis Alejandro Paulino 2019-7391
     return (
       <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center', ...styles.container }}>
-  <Text style={{fontSize:28}}>Inversiones del momento</Text><br></br><br></br>
-        <br />
+  <Text style={{fontSize:28}}>Inversiones del momento</Text>
+        
         <View style={{ color: 'black', borderWidth: 1, width: 203 }}>
           <Image style={{ borderWidth: 1, width: 200, height: 100 }}
             source={source1}
-          /><br></br>
-       <p>
-          este pdroducto conta con tales carateristicas
-          este pdroducto conta con tales carateristicas
-          este pdroducto conta con tales carateristicas
-        </p>
-        </View><br />
+          />
+               <Text>
+            este pdroducto conta con tales carateristicas
+            este pdroducto conta con tales carateristicas
+            este pdroducto conta con tales carateristicas
+          </Text>
+        </View>
   
         <View style={{ color: 'black', borderWidth: 1, width: 203 }}>
           <Image style={{ borderWidth: 1, width: 200, height: 100 }}
             source={source1}
-          /><br></br>
-          <p>
-          este pdroducto conta con tales carateristicas
-          este pdroducto conta con tales carateristicas
-          este pdroducto conta con tales carateristicas
-        </p>
-        </View><br />
+          />
+                  <Text>
+            este pdroducto conta con tales carateristicas
+            este pdroducto conta con tales carateristicas
+            este pdroducto conta con tales carateristicas
+          </Text>
+        </View>
   
         <View style={{ color: 'black', borderWidth: 1, width: 203 }}>
           <Image style={{ borderWidth: 1, width: 200, height: 100 }}
             source={source1}
-          /><br></br>
-        <p>
-          este pdroducto conta con tales carateristicas
-          este pdroducto conta con tales carateristicas
-          este pdroducto conta con tales carateristicas
-        </p>
+          />
+                <Text>
+            este pdroducto conta con tales carateristicas
+            este pdroducto conta con tales carateristicas
+            este pdroducto conta con tales carateristicas
+          </Text>
         </View>
   
       </View>

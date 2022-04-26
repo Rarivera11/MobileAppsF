@@ -22,23 +22,23 @@ function Preguntas({ navigation }) {//Luis Alejandro Paulino 2019-7391
     return (
   
       <View style={{ flex: 1, backgroundColor: '#DBDBDB', alignItems: 'center', ...styles.container }}>
-      <br></br>
+      
 
-      <Text style={{ backgroundColor: 'green', fontSize: 25 }}>Respuestas de Ayuda </Text><br></br>
+      <Text style={{ backgroundColor: 'green', fontSize: 25 }}>Respuestas de Ayuda </Text>
 
-      <br></br>
+      
 
-      <Text style={{ Color: 'black', fontSize: 25 }}>Cantidad de sucursales:  </Text><br></br>
+      <Text style={{ Color: 'black', fontSize: 25 }}>Cantidad de sucursales:  </Text>
 
-      <Text style={{ Color: 'black', fontSize: 25 }}>Ubicacion de sucursales: </Text><br></br>
+      <Text style={{ Color: 'black', fontSize: 25 }}>Ubicacion de sucursales: </Text>
 
-      <Text style={{ Color: 'black', fontSize: 25 }}>Como contactarnos: </Text><br></br>
+      <Text style={{ Color: 'black', fontSize: 25 }}>Como contactarnos: </Text>
 
-      <Text style={{ Color: 'black', fontSize: 25 }}>Nuestros productos: </Text><br></br>
+      <Text style={{ Color: 'black', fontSize: 25 }}>Nuestros productos: </Text>
 
 
 
-      <br></br>
+      
 
 
 

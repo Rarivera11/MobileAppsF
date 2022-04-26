@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import React, {useEffect, useState} from 'react';
+import { Button,ScrollView,View, Text, Linking, Image, StyleSheet, TouchableHighlight, ImageBackground, FlatList, Alert, Modal } from 'react-native';
+import { createDrawerNavigator, DrawerContent, DrawerItem } from '@react-navigation/drawer';
+import { NavigationContainer, DefaultTheme, DrawerActions } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 /*******************VIEWS****************** */
@@ -18,6 +20,8 @@ import Sugerencias from './Views/Sugerencias';
 import Preguntas from './Views/Preguntas';
 import ContactoMapas from './Views/ContactoMapas';
 import Ayuda from './Views/Ayuda';
+import Salir from './Views/Salir';
+
 
 /*********************************************** */
 
@@ -28,20 +32,42 @@ const MyTheme = {
   ...DefaultTheme, 
   colors:{
     ...DefaultTheme.colors,
-    background:'white'
-  }
+    background:'white',
+    primary:"gray",
+    text:"black",
+    border:"green",
+  },
+  
 }
 
 export default function MyDrawer() {
-  const [token, setToken] = useState(localStorage.getItem('token'))
+  
+  const [token, setToken] = useState(false);
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('token')
+      if(value !== null) {
+        setToken(true)
+      }else{
+        setToken(false)
+      }
+    } catch(e) {
+    }
+  }
 
+  useEffect(()=>{
+    getData()
+  },[])
 
-/*   <Drawer.Screen name="Resumen" component={Resumen} />
- */
-  return (
-    token !== null ?
+var init = "Login";
+token ? init = "Resumen" : init = "Login";
+
+return (
     <NavigationContainer theme={MyTheme}>
-      <Drawer.Navigator initialRouteName="Resumen">
+      <Drawer.Navigator initialRouteName={`${init}`}>
+        <Drawer.Screen name='Login' component={Login} options={{
+          headerShown:false, drawerItemStyle:{height:0}
+        }} />
         <Drawer.Screen name="Resumen" component={Resumen} />
         <Drawer.Screen name="Noticias" component={Noticias} />
         <Drawer.Screen name="Recuperar Contraseña" component={RecuperarContrasena} />
@@ -54,13 +80,8 @@ export default function MyDrawer() {
         <Drawer.Screen name="Preguntas Frecuentes" component={Preguntas} />
         <Drawer.Screen name="Contactanos" component={ContactoMapas} />
         <Drawer.Screen name="Ayuda" component={Ayuda} />
+        <Drawer.Screen name="Salir" component={Salir} />
       </Drawer.Navigator>
     </NavigationContainer>
-  :
-  <NavigationContainer theme={MyTheme}>
-  <Drawer.Navigator initialRouteName="Login">
-    <Drawer.Screen name='Login' component={Login} />
-  </Drawer.Navigator>
-</NavigationContainer>
   );
 }

@@ -13,14 +13,14 @@ function ConsultaCuentasAhorro({ navigation }) {//Luis Alejandro Paulino 2019-73
   
       <View >
         <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center', ...styles.container }}>
-          <br></br>
+          
   
-          <Text>Numero de Cuenta: </Text><br></br>
-          <Text>Balance disponible: </Text><br></br>
+          <Text>Numero de Cuenta: </Text>
+          <Text>Balance disponible: </Text>
   
   
   
-          <br></br>
+          
   
   
         </View>

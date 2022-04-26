@@ -1,143 +1,121 @@
 
 import React, { useState } from 'react';
-import { Button, View, Text, Image, StyleSheet, TouchableHighlight, Card, ImageBackground, FlatList, Alert, Modal, Dimensions } from 'react-native';
+import { Button,ScrollView, SafeAreaView, View, Text, Image, StyleSheet, TouchableHighlight, Card, ImageBackground, FlatList, Alert, Modal, Dimensions } from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import loginLogo from '../assets/image/cop.png';
 import dgi from '../assets/image/dgi.jpg';
 
-
-import MapView from 'react-native-maps';
+import MapView, {Marker}  from 'react-native-maps';
 
 import styles from '../assets/css/Style';
 
-function ContactoMapas({ navigation }) {//Luis Alejandro Paulino 2019-7391
 
+function ContactoMapas({ navigation }) {
+
+  const coopDgiiLocation ={
+        
+    latitude: 18.474146,
+    longitude: -69.902872,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  };
 
   return (
 
+<SafeAreaView >
+      <ScrollView style={{marginBottom:15}} >
 
-    <View style={{ flex: 1, backgroundColor: '', alignItems: 'center' }}>
 
-      <Image style={{ height: 70, width: 70 }}
-        source={loginLogo}
-      />
 
-      <View>
+<Image style={{ height: 150, width: 400 }} source={dgi} />
 
-        <Image style={{ height: 150, width: 400 }}
-          source={dgi}
-        /><br></br><br></br><br></br>
-
-        <View style={{ left: 40 }}>
+<View style={{ left: 40,marginTop:30,marginBottom:20 }}>
           <Text style={{ fontSize: 35, color: 'grey' }}>Nuestras Areas De Servicios</Text>
         </View>
-        <br></br><br></br>
 
-
-
-        <View style={{ left: 90 }}>
-
-          <View style={{ flexDirection: 'initial', left: -10 }}>
+        <View style={{ left: 90,marginBottom:30 }}>
+        <View style={{left: -10 }}>
             <Image style={{ height: 40, width: 40, right: 5 }}
-              source={loginLogo}
+              source={{
+                uri:'https://coopdgii.com/wp-content/uploads/2021/10/MicrosoftTeams-image-4.jpg'}}
             />
-            <Text >Luis Paulino</Text>
+            <Text >Yohanny Duarte</Text>
           </View>
-          <Text style={{ color: 'green' }}>Analista Sistemas</Text><br></br>
-          <Text>Nuestra area siempre imnovadora para <br></br> nuestro servicio al cliente</Text><br></br>
-          <Text>Tel: 81056151651</Text>
-          <Text>Correo: ejemplo@gmail.com</Text>
-
-
-        </View><br></br><br></br><br></br>
-
-        <View style={{ left: 90 }}>
-
-          <View style={{ flexDirection: 'initial', left: -10 }}>
+          <Text style={{ color: 'green' }}>Oficial de Servicios</Text>
+          <Text>Nuestra área de servicio siempre {'\n'}innovando para mantener informado {'\n'}a todos socios. </Text>
+          <Text>Tel: 809-287-2875</Text>
+          <Text>Correo: yduarte@dgii.gov.do</Text>
+      </View>              
+    <View style={{ left: 90,marginBottom:30 }}>
+    <View style={{left: -10 }}>
             <Image style={{ height: 40, width: 40, right: 5 }}
-              source={loginLogo}
+              source={{
+                uri:'https://coopdgii.com/wp-content/uploads/2021/10/MicrosoftTeams-image-6.jpg'}}
             />
-            <Text >Luis Paulino</Text>
+            <Text >Anny Rodrigez</Text>
           </View>
-          <Text style={{ color: 'green' }}>Analista Sistemas</Text><br></br>
-          <Text>Nuestra area siempre imnovadora para <br></br> nuestro servicio al cliente</Text><br></br>
-          <Text>Tel: 81056151651</Text>
-          <Text>Correo: ejemplo@gmail.com</Text>
+<Text style={{ color: 'green' }}>Oficial de Servicios</Text>
+<Text>Nuestra área de servicio siempre {'\n'}innovando para mantener informado {'\n'}a todos socios. </Text>
+<Text>Tel: 809-287-2875</Text>
+<Text>Correo: annrodrigu@dgii.gov.do</Text>
 
 
-        </View><br></br><br></br><br></br>
+</View>
 
-        <View style={{ left: 90 }}>
-
-          <View style={{ flexDirection: 'initial', left: -10 }}>
+<View style={{ left: 90, marginBottom:30 }} >
+<View style={{left: -10 }}>
             <Image style={{ height: 40, width: 40, right: 5 }}
-              source={loginLogo}
+              source={{
+                uri:'https://coopdgii.com/wp-content/uploads/2021/10/MicrosoftTeams-image-3.jpg'}}
             />
-            <Text >Luis Paulino</Text>
+            <Text >Yulitza Nuñez</Text>
           </View>
-          <Text style={{ color: 'green' }}>Analista Sistemas</Text><br></br>
-          <Text>Nuestra area siempre imnovadora para <br></br> nuestro servicio al cliente</Text><br></br>
-          <Text>Tel: 81056151651</Text>
-          <Text>Correo: ejemplo@gmail.com</Text>
-
-
-        </View><br></br><br></br><br></br>
-
-
-
-      </View>
-
-
-
-
-
-
-
-
-      <MapView
+<Text style={{ color: 'green' }}>Cajera Oficial de Servicios</Text>
+<Text>Nuestra área de servicio siempre {'\n'}innovando para mantener informado {'\n'}a todos socios. </Text>
+<Text>Tel: 809-287-2833</Text>
+<Text>Correo: ymnunezb@dgii.gov.do</Text>
+</View>
+<MapView
         style={{
           width: Dimensions.get('window').width,
-          height: '30%'
+          height:200,
+          marginBottom:30
         }}
-
-        initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
+        initialRegion={coopDgiiLocation}
+     >
 
 
-
-      /><br></br><br></br>
+        <Marker coordinate={coopDgiiLocation} />
+      </MapView>
+      <View style={{alignItems:"center"}}>
 
       <Image style={{ height: 100, width: 100 }}
         source={loginLogo}
-      /> <br></br><br></br>
+        /> 
 
-      <Text style={{color:'grey', fontSize:20}}>Conctatos</Text>
+      <Text style={{color:'gray', fontSize:20}}>Conctatos</Text>
 
-      <br></br><br></br>
+      
 
-      <Text style={{color:'grey'}}>Whatsapp</Text>
-      <Text style={{color:'grey'}}>(849) 451-0798</Text><br></br>
+      <Text style={{color:'gray'}}>Whatsapp</Text>
+      <Text style={{color:'gray'}}>(849) 451-0798</Text>
 
-      <Text style={{color:'grey'}}>Oficina</Text>
-      <Text style={{color:'grey'}}>(809) 287-2700</Text>
-      <Text style={{color:'grey'}}>info@coopdgii.com</Text><br></br><br></br>
-
-
-      <Text style={{color:'grey'}}>Locacion</Text>
-      <Text style={{color:'grey'}}>Av.Pedro Henriquez Ureña #29 Gazcue</Text>
-      <Text style={{color:'grey'}}>Santo Domingo</Text>
-      <Text style={{color:'grey'}}>Republica Domincana</Text>
+      <Text style={{color:'gray'}}>Oficina</Text>
+      <Text style={{color:'gray'}}>(809) 287-2700</Text>
+      <Text style={{color:'gray'}}>info@coopdgii.com</Text>
 
 
+      <Text style={{color:'gray'}}>Locacion</Text>
+      <Text style={{color:'gray'}}>Av.Pedro Henriquez Ureña #29 Gazcue</Text>
+      <Text style={{color:'gray'}}>Santo Domingo</Text>
+      <Text style={{color:'gray'}}>Republica Domincana</Text>
+
+        </View>
 
 
+      </ScrollView>
+    </SafeAreaView>
 
-
-    </View>
 
 
 

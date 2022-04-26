@@ -11,19 +11,19 @@ function ConsultaPrestamos({ navigation }) {//Luis Alejandro Paulino 2019-7391
     return (
   
       <View >
-        <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center', ...styles.container }}><br></br><br></br>
+        <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center', ...styles.container }}>
          
-         <Text style={{backgroundColor:'green',fontSize:25}}>Resumen de Sus Prestamos </Text><br></br>
-          <br></br>
+         <Text style={{backgroundColor:'green',fontSize:25}}>Resumen de Sus Prestamos </Text>
+          
   
-          <Text >Numero de Cuenta: </Text><br></br>
-          <Text>Numero de Prestamo: </Text><br></br>
-          <Text>Cantidad total: </Text><br></br>
-          <Text>Cuota mensual: </Text><br></br>
+          <Text >Numero de Cuenta: </Text>
+          <Text>Numero de Prestamo: </Text>
+          <Text>Cantidad total: </Text>
+          <Text>Cuota mensual: </Text>
   
   
   
-          <br></br>
+          
   
   
         </View>

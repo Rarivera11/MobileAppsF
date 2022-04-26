@@ -23,11 +23,11 @@ function Sugerencias({ navigation }) {//Luis Alejandro Paulino 2019-7391
 
 
     <View style={{ flex: 1, backgroundColor: '#DBDBDB', alignItems: 'center', ...styles.container }}>
-      <br></br>
+      
 
-      <Text style={{ backgroundColor: 'green', fontSize: 25 }}>Escribe tus sigerencias aqui </Text><br></br>
+      <Text style={{ backgroundColor: 'green', fontSize: 25 }}>Escribe tus sigerencias aqui </Text>
 
-      <br></br>
+      
 
       <TextInput
         style={{ height: 100, width: 200, borderColor: 'black', borderBottomEndRadius: 10, borderWidth: 20, borderRadius: 10, borderWidth: 1, borderWidth: 1 }}
@@ -40,7 +40,7 @@ function Sugerencias({ navigation }) {//Luis Alejandro Paulino 2019-7391
       />
 
 
-      <br></br>
+      
 
 
 
